@@ -36,6 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# backup local das fotos originais em alta resolução (não deve ir para o repositório/site)
+/_originals-backup
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
