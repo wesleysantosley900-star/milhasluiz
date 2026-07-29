@@ -2,6 +2,7 @@ import { Award, Instagram, Youtube, MessageCircle } from "lucide-react";
 import { Reveal } from "@/components/motion/reveal";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { FallbackImage } from "@/components/shared/fallback-image";
+import { NoCopy } from "@/components/shared/no-copy";
 import { siteConfig } from "@/data/site-config";
 
 const credentials = [
@@ -16,18 +17,19 @@ export function About() {
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
           <Reveal className="relative mx-auto w-full max-w-md">
-            <div className="overflow-hidden rounded-[2rem] shadow-premium">
+            <NoCopy className="overflow-hidden rounded-[2rem] shadow-premium">
               <FallbackImage
                 src="/specialist.jpg"
                 fallbackSrc="/specialist.svg"
                 alt={siteConfig.specialist.name}
                 width={900}
                 height={1200}
+                draggable={false}
                 loading="lazy"
                 sizes="(min-width: 768px) 448px, 90vw"
                 className="h-auto w-full object-cover"
               />
-            </div>
+            </NoCopy>
             <div className="absolute -bottom-8 left-1/2 flex w-[calc(100%-2rem)] -translate-x-1/2 items-center justify-between rounded-2xl bg-white px-6 py-5 shadow-premium">
               {credentials.map((item) => (
                 <div key={item.label} className="text-center">

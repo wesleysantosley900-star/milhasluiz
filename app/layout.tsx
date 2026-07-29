@@ -6,6 +6,9 @@ import { siteConfig } from "@/data/site-config";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { WhatsappFloat } from "@/components/layout/whatsapp-float";
+import { CookieConsentProvider } from "@/components/consent/cookie-consent-provider";
+import { CookieConsentBanner } from "@/components/consent/cookie-consent-banner";
+import { AnalyticsScripts } from "@/components/consent/analytics-scripts";
 
 const poppins = Poppins({
   variable: "--font-heading",
@@ -100,10 +103,14 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col bg-background font-body text-foreground">
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
-        <WhatsappFloat />
+        <CookieConsentProvider>
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+          <WhatsappFloat />
+          <CookieConsentBanner />
+          <AnalyticsScripts />
+        </CookieConsentProvider>
       </body>
     </html>
   );

@@ -47,6 +47,38 @@ para carregar as fontes Poppins (títulos) e Inter (corpo do texto) de forma oti
   profissional habilitado.
 - Ajuste `url` em `data/site-config.ts` para o domínio final (usado no `sitemap.xml`,
   `robots.txt` e nas tags de SEO/Open Graph).
+- Atualize o "Controlador dos dados" em `/politica-de-privacidade` com o CNPJ, caso o
+  negócio seja formalizado, e peça revisão jurídica de todo o texto antes de publicar.
+
+## Segurança, LGPD e cookies
+
+O que já está implementado:
+
+- **Headers de segurança** (`next.config.ts`): Content-Security-Policy, X-Frame-Options,
+  X-Content-Type-Options, Referrer-Policy, Permissions-Policy e HSTS em todas as rotas.
+- **Bloqueio de hotlinking** (`middleware.ts`): outros sites não conseguem embutir as
+  fotos de `/public/gallery` e `/public/specialist.jpg` diretamente (retorna 403).
+- **`noimageindex`** nas fotos, para dificultar que apareçam soltas no Google Imagens.
+- **Marca d'água** discreta nas fotos da galeria + bloqueio de clique-direito/arraste
+  (`.no-copy`) — dificulta cópia casual, mas **não impede** print de tela ou download
+  direto da URL (isso não é tecnicamente possível para uma imagem pública na web).
+- **Banner de consentimento de cookies** (LGPD): aparece no primeiro acesso, com
+  "Aceitar todos" / "Recusar". Pode ser reaberto a qualquer momento pelo link
+  "Preferências de Cookies" no rodapé.
+- **Google Analytics e Meta Pixel só carregam após o aceite** no banner — veja
+  `.env.example` para configurar os IDs (`NEXT_PUBLIC_GA_MEASUREMENT_ID` e
+  `NEXT_PUBLIC_META_PIXEL_ID` em um arquivo `.env.local`). Sem os IDs preenchidos, os
+  scripts simplesmente não carregam.
+- **Política de Privacidade e Termos de Uso** já cobrem: controlador dos dados, bases
+  legais, cookies/rastreamento, compartilhamento com terceiros, direitos do titular
+  (art. 18 da LGPD) e cláusula de propriedade intelectual/proibição de reprodução.
+
+**Importante sobre "impedir clonagem/cópia":** tecnicamente não é possível impedir 100%
+que alguém copie um site público (qualquer pessoa pode usar "Ver código-fonte" ou tirar
+print) ou uma imagem exibida no navegador. As medidas acima elevam bastante a régua
+(dificultam cópia casual, bloqueiam embutir as fotos em outro site, e dão base jurídica
+para pedir remoção/agir judicialmente contra cópias), mas não substituem proteção 100%
+— isso não existe para conteúdo público na web.
 
 ## Deploy na Netlify
 

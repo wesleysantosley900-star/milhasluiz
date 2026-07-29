@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Instagram, Youtube, MessageCircle, Mail, Plane } from "lucide-react";
 import { siteConfig, navLinks } from "@/data/site-config";
+import { CookieSettingsLink } from "@/components/consent/cookie-settings-link";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -96,6 +97,9 @@ export function Footer() {
                 <Link href="/termos-de-uso" className="transition-colors hover:text-gold">
                   Termos de Uso
                 </Link>
+              </li>
+              <li>
+                <CookieSettingsLink className="transition-colors hover:text-gold" />
               </li>
             </ul>
           </div>

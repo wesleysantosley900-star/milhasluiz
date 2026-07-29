@@ -33,6 +33,25 @@ export default function TermsOfUsePage() {
           A Consultoria Premium é um serviço individual, agendado previamente, sujeito à
           disponibilidade de agenda do especialista.
         </p>
+
+        <h2 className="pt-4 font-heading text-xl font-bold text-navy">
+          Propriedade intelectual
+        </h2>
+        <p>
+          Todo o conteúdo deste site — incluindo textos, layout, design, código-fonte,
+          identidade visual, fotografias e a marca {siteConfig.name} — é de propriedade
+          exclusiva da {siteConfig.name} ou de seus licenciadores, protegido pela Lei nº
+          9.610/98 (Lei de Direitos Autorais) e pela Lei nº 9.279/96 (Propriedade
+          Industrial), quando aplicável.
+        </p>
+        <p>
+          É proibida a reprodução, cópia, distribuição, engenharia reversa, raspagem
+          (scraping) automatizada ou criação de obras derivadas deste site ou de qualquer
+          parte dele — incluindo suas fotografias — sem autorização prévia e por escrito.
+          O uso não autorizado poderá resultar em notificação de remoção (takedown),
+          medidas administrativas e responsabilização civil e criminal, nos termos da
+          legislação aplicável.
+        </p>
         <p className="text-sm text-muted-foreground/70">
           Substitua este conteúdo pelo texto jurídico definitivo, revisado por um
           profissional habilitado, antes de publicar em produção.
