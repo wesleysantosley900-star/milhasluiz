@@ -147,7 +147,9 @@
 ----------------------------------------------------------------- */
 @layer utilities {
   .glass {
-    @apply bg-white/10 backdrop-blur-xl border border-white/15;
+    /* backdrop-blur é caro em mobile (sobretudo em elementos que animam/scrollam);
+       usamos um fundo sólido translúcido até `sm` e só ligamos o blur em telas maiores. */
+    @apply bg-navy/70 sm:bg-white/10 sm:backdrop-blur-xl border border-white/15;
   }
   .glass-light {
     @apply bg-white/70 backdrop-blur-xl border border-white/60;

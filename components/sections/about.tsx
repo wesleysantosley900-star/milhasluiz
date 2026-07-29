@@ -24,6 +24,7 @@ export function About() {
                 width={900}
                 height={1200}
                 loading="lazy"
+                sizes="(min-width: 768px) 448px, 90vw"
                 className="h-auto w-full object-cover"
               />
             </div>

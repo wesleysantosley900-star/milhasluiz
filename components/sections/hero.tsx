@@ -14,8 +14,8 @@ export function Hero() {
     >
       {/* Fundo decorativo: grid + glow dourado */}
       <div className="absolute inset-0 bg-grid opacity-40" />
-      <div className="pointer-events-none absolute -top-40 right-0 h-[36rem] w-[36rem] rounded-full bg-gold/20 blur-[120px]" />
-      <div className="pointer-events-none absolute bottom-0 left-0 h-96 w-96 rounded-full bg-premium/30 blur-[100px]" />
+      <div className="pointer-events-none absolute -top-40 right-0 hidden h-144 w-xl rounded-full bg-gold/20 blur-[120px] sm:block" />
+      <div className="pointer-events-none absolute bottom-0 left-0 hidden h-96 w-96 rounded-full bg-premium/30 blur-[100px] sm:block" />
 
       {/* Rota de voo decorativa */}
       <svg
