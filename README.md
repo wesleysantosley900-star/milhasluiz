@@ -58,24 +58,29 @@ dos panos, sem precisar configurar nada extra no código.
 
 Assim, todo `git push` gera um novo deploy automaticamente.
 
-1. Suba o projeto para um repositório no GitHub, GitLab ou Bitbucket:
-   ```bash
-   git init
-   git add .
-   git commit -m "primeiro commit"
-   git remote add origin <URL_DO_SEU_REPOSITORIO>
-   git push -u origin main
-   ```
-2. Acesse [app.netlify.com](https://app.netlify.com) e clique em **Add new site →
+O código já está versionado e publicado no repositório:
+[github.com/wesleysantosley900-star/milhasluiz](https://github.com/wesleysantosley900-star/milhasluiz)
+
+Para conectar esse repositório à Netlify:
+
+1. Acesse [app.netlify.com](https://app.netlify.com) e clique em **Add new site →
    Import an existing project**.
-3. Escolha o repositório que você acabou de subir.
-4. Configuração de build (a Netlify já sugere isso automaticamente, só confirme):
+2. Escolha **GitHub** e selecione o repositório `milhasluiz`.
+3. Configuração de build (a Netlify já sugere isso automaticamente, só confirme):
    - **Build command:** `npm run build`
    - **Publish directory:** deixe como sugerido pela Netlify (o plugin cuida disso)
-5. Clique em **Deploy site**. Em poucos minutos o site estará no ar em uma URL
+4. Clique em **Deploy site**. Em poucos minutos o site estará no ar em uma URL
    `algo.netlify.app`.
-6. Para usar seu próprio domínio: vá em **Domain settings → Add a domain** e siga as
+5. Para usar seu próprio domínio: vá em **Domain settings → Add a domain** e siga as
    instruções de DNS.
+
+A partir daí, qualquer alteração local seguida de:
+```bash
+git add .
+git commit -m "sua mensagem"
+git push
+```
+gera um novo deploy automático na Netlify.
 
 ### Opção B — Deploy direto pela CLI (sem precisar de Git/GitHub)
 
